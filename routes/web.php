@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/Hello', function () {
+    echo "Hello World";
+});
+
+Route::get('/name/{Name}/{NRP}', function ($name,$nrp) {
+    return "Hello " . $name . " NRP Anda " . $nrp;
+});
