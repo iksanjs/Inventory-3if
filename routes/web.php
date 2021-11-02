@@ -15,10 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/Hello', function () {
-    echo "Hello World";
-});
+Route::get('/person', 'PersonController@index');
 
-Route::get('/name/{Name}/{NRP}', function ($name,$nrp) {
-    return "Hello " . $name . " NRP Anda " . $nrp;
-});
+Route::get('/person/show/{param}', 'PersonController@show');
+
+Route::resource('/student', 'StudentController');
