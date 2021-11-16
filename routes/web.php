@@ -25,6 +25,10 @@ Route::get('/student', 'StudentController@index');
 
 Route::get('/student/my-academic/{course}/{task}/{quiz}/{mid_term}/{final}', 'StudentController@myCourse');
 
+Route::get('/person/add', 'PersonController@add');
+
+Route::post('/person/addProcess', 'PersonController@addProcess');
+
 
 Route::get('/homepage', function () {
     return view('home', ["name" => "Iksan Jaya Sebastian"]);

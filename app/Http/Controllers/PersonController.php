@@ -30,5 +30,18 @@ class PersonController extends Controller
         return $this->name;
     }
 
-    
+    public function add() {
+        //Mengembalikan nilai attibute name
+        return view('person.add');
+    }
+
+    public function addProcess(Request $request) {
+        //Mengembalikan nilai attibute name
+        $this->validate($request,[
+            'person_name' => 'required|max:30',
+            'person_email' => 'required|email'
+        ]);
+
+        return view('person.show',['data' => $request]);
+    }
 }
