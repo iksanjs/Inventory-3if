@@ -19,4 +19,13 @@ Route::get('/person', 'PersonController@index');
 
 Route::get('/person/show/{param}', 'PersonController@show');
 
-Route::resource('/student', 'StudentController');
+Route::get('/person/send-data', 'PersonController@sendData');
+
+Route::get('/student', 'StudentController@index');
+
+Route::get('/student/my-academic/{course}/{task}/{quiz}/{mid_term}/{final}', 'StudentController@myCourse');
+
+
+Route::get('/homepage', function () {
+    return view('home', ["name" => "Iksan Jaya Sebastian"]);
+});

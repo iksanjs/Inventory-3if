@@ -13,7 +13,15 @@ class PersonController extends Controller
     //Membuat Method Index
     public function index() {
         //Mengembalikan nilai attibute name
-        return $this->name. " " . $this->code;
+        return view("person.index");
+    }
+
+    public function sendData() {
+        //Mengembalikan nilai attibute name
+        $code = $this->code;
+        $name = $this->name;
+
+        return view("person.sendData", compact('code', 'name'));
     }
 
     public function show($param) {
